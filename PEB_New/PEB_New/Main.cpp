@@ -84,15 +84,39 @@ int main() {
 	//get checksum
 	printf("check sum from optional header --> %x\n", p_nt_header->OptionalHeader.CheckSum);
 
-	/*NEED TO GET THE ADDRESS OF LOADLIBRARY WITHOUT GET PROCADDRESS*/
+	int number_of_functions = 0;
 
+	DWORD rva = (DWORD)p_nt_header->OptionalHeader.DataDirectory[0].VirtualAddress;
+	PIMAGE_EXPORT_DIRECTORY p_export_dir = (PIMAGE_EXPORT_DIRECTORY)(rva_to_va(rva, p_nt_header, lpFileBase));
+	if (p_export_dir == NULL) {
+		fprintf(stderr, "va is null");
+		getchar();
+		return FAIL;
+	}
+	DWORD* address_of_functions = (DWORD*)rva_to_va(p_export_dir->AddressOfNames, p_nt_header, lpFileBase);
+	if (address_of_functions == NULL) {
+		fprintf(stderr, "va is null");
+		getchar();
+		return FAIL;
+	}
+	for (unsigned int i = 1; i < p_export_dir->NumberOfNames;++i) {
+		char* func_name = (char*)rva_to_va(address_of_functions[i], p_nt_header, lpFileBase);
+		if (func_name == NULL) {
+			fprintf(stderr, "va is null");
+			getchar();
+			return FAIL;
+		}
+		printf("%s\n", func_name);
+		++number_of_functions;
+	}
+	printf("%d", number_of_functions);
 
 	//list all dll names and their address from the current pe
 	while (peb->BaseAddress) {
 		fprintf(stdout, "%S loaded to address %p\n", peb->BaseDllName.Buffer, peb->BaseAddress);
 		// SEARCHING FOR kernel32.dll
-		if (!wcscmp(peb->BaseDllName.Buffer, L"KERNEL32.DLL")) {
-			//to finish
+		if (!wcscmp(peb->BaseDllName.Buffer,L"KERNEL32.DLL")) {
+			// Need to complete
 		}
 		peb = (PLDR_DATA_ENTRY)peb->InMemoryOrderModuleList.Flink;
 	}
