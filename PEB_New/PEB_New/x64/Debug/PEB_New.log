@@ -1,0 +1,12 @@
+﻿  Main.cpp
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(26): error C2485: 'naked': unrecognized extended attribute
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(27): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2065: 'mov': undeclared identifier
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2146: syntax error: missing ';' before identifier 'eax'
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2065: 'eax': undeclared identifier
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2065: 'fs': undeclared identifier
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2143: syntax error: missing ';' before ':'
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(28): error C2059: syntax error: ':'
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(66): warning C4311: 'type cast': pointer truncation from 'PIMAGE_DOS_HEADER' to 'DWORD'
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(66): warning C4302: 'type cast': truncation from 'PIMAGE_DOS_HEADER' to 'DWORD'
+c:\users\elad\source\repos\peb_new\peb_new\main.cpp(66): warning C4312: 'type cast': conversion from 'unsigned long' to 'PIMAGE_NT_HEADERS' of greater size

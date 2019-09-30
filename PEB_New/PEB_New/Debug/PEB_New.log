@@ -1,0 +1,7 @@
+﻿  Main.cpp
+c:\users\jbt\documents\visual studio 2015\projects\peb_new\peb_new\main.cpp(88): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'PVOID'
+c:\users\jbt\documents\visual studio 2015\projects\peb_new\peb_new\main.cpp(113): warning C4047: '=': 'DWORD' differs in levels of indirection from 'PBYTE'
+c:\users\jbt\documents\visual studio 2015\projects\peb_new\peb_new\main.cpp(106): warning C4047: 'initializing': 'DWORD' differs in levels of indirection from 'void *'
+c:\users\jbt\documents\visual studio 2015\projects\peb_new\peb_new\main.cpp(107): warning C4133: 'initializing': incompatible types - from 'PIMAGE_NT_HEADERS' to 'PIMAGE_SECTION_HEADER'
+  PEB_New.vcxproj -> c:\users\jbt\documents\visual studio 2015\Projects\PEB_New\Debug\PEB_New.exe
+  PEB_New.vcxproj -> c:\users\jbt\documents\visual studio 2015\Projects\PEB_New\Debug\PEB_New.pdb (Full PDB)
