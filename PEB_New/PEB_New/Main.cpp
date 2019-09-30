@@ -92,7 +92,7 @@ int main() {
 		fprintf(stdout, "%S loaded to address %p\n", peb->BaseDllName.Buffer, peb->BaseAddress);
 		// SEARCHING FOR kernel32.dll
 		if (!wcscmp(peb->BaseDllName.Buffer, L"KERNEL32.DLL")) {
-			
+			//to finish
 		}
 		peb = (PLDR_DATA_ENTRY)peb->InMemoryOrderModuleList.Flink;
 	}
